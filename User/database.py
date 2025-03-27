@@ -45,6 +45,35 @@ class product_handler:
     def get_all_products(self):
         """Retrieve all products from the database."""
         return self.db.all()
+    
+    def search_products(self, min_price=None, max_price=None, category=None):
+        """Search for products by price range and category."""
+        query = self.Product  # Start with the base query
+        
+        # Create a list of conditions
+        conditions = []
+        
+        if min_price is not None:
+            conditions.append(self.Product.price >= min_price)
+        
+        if max_price is not None:
+            conditions.append(self.Product.price <= max_price)
+        
+        if category is not None and category != "":  # Ensure category is not empty
+            conditions.append(self.Product.category == category)
+
+        # If there are no conditions, return all products
+        if not conditions:
+            return self.get_all_products()
+
+        # Combine all conditions using AND logic
+        final_query = conditions[0]
+        for condition in conditions[1:]:
+            final_query &= condition
+
+        return self.db.search(final_query)
+        
+        
 
 
 class order_handler():

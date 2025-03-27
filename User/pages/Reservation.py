@@ -1,23 +1,24 @@
 import streamlit as st
-from Shops.database import order_handler , product_handler
+from database import order_handler , product_handler
 
 OrderHandler = order_handler()
 ProductHandler = product_handler()
 
 name = st.text_input("food selection")
 
-quantity = st.number_input("Quantity wanted" ,  min_value=0, value=0, step=1, format='%d')
+quantity = st.number_input("Quantity wanted" ,  min_value=1, value=1, step=1, format='%d')
 
 
 
 
 time = str(st.time_input("Pick Up time") )
-data = str(st.date_input("Date"))
+date = str(st.date_input("Date"))
 
 
+temp = date + time
 confirm = st.button("Reserve the food")
 if confirm:
-    OrderHandler.add_record(name , quantity , time)
+    OrderHandler.add_record(name , quantity , temp)
     ProductHandler.update_product_quantity(name , -1 * quantity)
     st.success("Food Resevered")
 
