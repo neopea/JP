@@ -17,7 +17,7 @@ if uploaded_file is not None:
     st.image(image, caption='Uploaded Image', use_column_width=True)
     
     # Save the image as food.jpg
-    image.save("food123.jpg")
+    image.save("photo.jpg")
     st.success("Image saved as food.jpg")
 
 
@@ -45,7 +45,7 @@ price= st.number_input("Price ($)", min_value=0.0, format="%.2f")
 quantity_available=st.number_input("Quantity", min_value=0)
 category= st.multiselect( # Multiple categories for the user to choose
 "Choose the category of the food item" , 
-["Fruits", "Vegetables", "Grain" ,"Protein" ,"Dairy" ,"Fats and Oils" ,"Drinks" ,"Snacks" ,"Others"]
+["Fruits", "Vegetables", "Packaged food" ,"Bread" ,"Dairy" ,"Rice" ,"Drinks" ,"Noodles" ,"Others"]
 )
 
 confirm = st.button("Confirm")

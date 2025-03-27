@@ -13,17 +13,8 @@ st.title("Food Preference Selector")
 price = st.slider("Select the maximum price of the food ($)", min_value=1, max_value=50, value=30)
 
 # Options for filtering
-categories = [
-    "Fruits", 
-    "Vegetables", 
-    "Grain", 
-    "Protein", 
-    "Dairy", 
-    "Fats and Oils", 
-    "Drinks", 
-    "Snacks", 
-    "Others"
-]
+categories = ["Fruits", "Vegetables", "Packaged food" ,"Bread" ,"Dairy" ,"Rice" ,"Drinks" ,"Noodles" ,"Others"]
+
 selected_types = st.multiselect("Select Food Categories", options=categories)
 
 # Fetch all food data from the database

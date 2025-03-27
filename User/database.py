@@ -149,17 +149,15 @@ class con_handler:
     
 # Example usage
 if __name__ == '__main__':
-    #testing case 
+    #testing case
+    '''
     my_db_handler = product_handler()
     x = con_handler()
     x.db.truncate()
     x = restaurant_handler()
     x.db.truncate()
-
-    #my_db_handler.db.truncate()
-
     handler = order_handler()
     handler.db.truncate()
     my_db_handler.db.truncate()
-
+    '''
 

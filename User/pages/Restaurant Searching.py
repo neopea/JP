@@ -48,26 +48,21 @@ if st.button("Confirm"):
         # Calculate the distance from the user's location to the restaurant's location
         restaurant_location = restaurant['coordinates']  # Assume you have coordinates
 
-
         if restaurant_location:
             distance = great_circle(user_location, restaurant_location).km
-
         # Filtering logic
         if (distance <= max_distance and 
             (not selected_types or any(cat in restaurant_categories for cat in selected_types))):
-            filtered_restaurants.append(restaurant)
+            filtered_restaurants.append([restaurant , distance ])
 
     # Display the filtered results
     if filtered_restaurants:
         st.subheader("Filtered Restaurants:")
         for restaurant in filtered_restaurants:
-            st.write(f"**{restaurant['restaurant_name']}**")
+            st.write(f"**{restaurant[0]['restaurant_name']}**")
             st.write("Rating " +  "⭐"* 5)
-            st.write(f"Distance: {distance:.2f} km")
-            st.write(f"Categories: {(restaurant['type'])}")
-            if st.button("More information"):
-                st.write("Reviews from others:")
-                st.markdown("nice")
+            st.write(f"Distance: {restaurant[1]:.2f} km")
+            st.write(f"Categories: {(restaurant[0]['type'])}")
             st.write("---")  # Separator
     else:
         st.write("No restaurants found matching your criteria.")

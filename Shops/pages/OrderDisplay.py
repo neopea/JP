@@ -5,26 +5,10 @@ handler= order_handler()
 
 
 
-if 'current_orders' not in st.session_state:
-    st.session_state.current_orders = [handler.get_all_record()]
-    st.write(st.session_state.current_orders)
-# Title of the application
-st.title("Restaurant Order Management")
-
-# Confirm order part
-st.header("Current Orders")
-if st.session_state.current_orders:
-    for idx, order in enumerate(st.session_state.current_orders):
-        st.write(idx , order)
-        st.write(f"{idx + 1}. {order['Quantity']} x {order['Food Type']} at ${order['Price']:.2f} each - Total: ${order['Total Price']:.2f}")
-
-        if st.button(f"Confirm Order {idx + 1} Done"):
-            st.session_state.current_orders.pop(idx)  # Remove the confirmed order
-            st.success(f"Order {idx + 1} confirmed as done!")
-            handler.update_product_quantity(product_name=order ,  )
-else:
-    st.write("No current orders.")
-
-# Footer
-st.write("---")
-st.write("Add orders to the list to manage them.")
+x = handler.db.all()
+for i in range(len(x)):
+    y = x[i]
+    st.write(f"Required order of {y["name"]}")
+    st.write(f"The quantity: {y["quantity"]}")
+    st.write(f"The pick up time is {y["pick up time"]}")
+    st.write("----")

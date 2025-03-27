@@ -9,7 +9,7 @@ RestHandler = restaurant_handler()
 # Input fields for restaurant data
 restaurant_name = st.text_input("Restaurant Name")
 coordinates = get_current_location()
-location = st.text_input("Location")
+location = st.text_input("Address")
 restaurant_type = st.selectbox("Restaurant Type", options = [
     "Mexican",
     "Thai",
@@ -26,6 +26,7 @@ restaurant_type = st.selectbox("Restaurant Type", options = [
 if st.button("Add Restaurant"):
     if restaurant_name and coordinates and location and restaurant_type:
         RestHandler.add_record(restaurant_name, coordinates, location, restaurant_type)
+        st.success("Added successfully")
     else:
         st.error("Please fill in all fields.")
 

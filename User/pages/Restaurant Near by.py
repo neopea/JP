@@ -20,8 +20,7 @@ m = folium.Map(location=user_location, zoom_start=12)
 locations = handler.db.all()
 loc = conhandler.db.all()
 
-st.write(len(loc))  # Display the number of convenience stores
-st.write(loc)       # Display the list of convenience stores
+
 
 # Adding restaurant markers
 for restaurant in locations:
