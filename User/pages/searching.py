@@ -6,7 +6,19 @@ from getloc import get_current_location
 my_handler = restaurant_handler()
 
 # Options for filtering
-categories = ["Fruits", "Vegetables", "Grain", "Protein", "Dairy", "Fats and Oils", "Drinks", "Snacks", "Others"]
+categories = [
+    "Mexican",
+    "Thai",
+    "Italian",
+    "Chinese",
+    "Indian",
+    "Japanese",
+    "French",
+    "Mediterranean",
+    "American",
+    "Spanish"
+]
+
 
 # Streamlit app title
 st.title("Restaurant Preference Selector")

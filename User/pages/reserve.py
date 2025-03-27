@@ -1,5 +1,5 @@
 import streamlit as st
-from database import order_handler , product_handler
+from Shops.database import order_handler , product_handler
 
 OrderHandler = order_handler()
 ProductHandler = product_handler()

@@ -1,1 +1,64 @@
-{"_default": {}}
+{
+    "restaurants": [
+      {
+        "restaurant_name": "Happy Rest",
+        "coordinates": [22.4949, 114.1395],
+        "location": "Yat Ming Road 23",
+        "type": "French"
+      },
+      {
+        "restaurant_name": "Dim Sum Delight",
+        "coordinates": [22.2827, 114.1586],
+        "location": "Canton Road 156",
+        "type": "Chinese"
+      },
+      {
+        "restaurant_name": "Sushi Haven",
+        "coordinates": [22.3142, 114.1763],
+        "location": "Star Street 10",
+        "type": "Japanese"
+      },
+      {
+        "restaurant_name": "Pasta Paradise",
+        "coordinates": [22.2765, 114.1641],
+        "location": "Lockhart Road 12",
+        "type": "Italian"
+      },
+      {
+        "restaurant_name": "Curry Master",
+        "coordinates": [22.2814, 114.1595],
+        "location": "Nathan Road 64",
+        "type": "Indian"
+      },
+      {
+        "restaurant_name": "Vegan Vibes",
+        "coordinates": [22.2905, 114.1511],
+        "location": "Peking Road 88",
+        "type": "Vegan"
+      },
+      {
+        "restaurant_name": "Spice Route",
+        "coordinates": [22.3113, 114.1434],
+        "location": "Mody Road 6",
+        "type": "Thai"
+      },
+      {
+        "restaurant_name": "Burger Blast",
+        "coordinates": [22.3048, 114.1791],
+        "location": "Graffiti Street 45",
+        "type": "American"
+      },
+      {
+        "restaurant_name": "Mediterranean Moods",
+        "coordinates": [22.3739, 114.1095],
+        "location": "Clear Water Bay Road 58",
+        "type": "Mediterranean"
+      },
+      {
+        "restaurant_name": "Bakery Bliss",
+        "coordinates": [22.2722, 114.1612],
+        "location": "Queen's Road Central 29",
+        "type": "Bakery"
+      }
+    ]
+  }

@@ -6,8 +6,8 @@ handler= order_handler()
 
 
 if 'current_orders' not in st.session_state:
-    st.session_state.current_orders = []
-
+    st.session_state.current_orders = [handler.get_all_record()]
+    st.write(st.session_state.current_orders)
 # Title of the application
 st.title("Restaurant Order Management")
 
@@ -15,6 +15,7 @@ st.title("Restaurant Order Management")
 st.header("Current Orders")
 if st.session_state.current_orders:
     for idx, order in enumerate(st.session_state.current_orders):
+        st.write(idx , order)
         st.write(f"{idx + 1}. {order['Quantity']} x {order['Food Type']} at ${order['Price']:.2f} each - Total: ${order['Total Price']:.2f}")
 
         if st.button(f"Confirm Order {idx + 1} Done"):

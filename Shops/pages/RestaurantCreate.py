@@ -10,7 +10,7 @@ RestHandler = restaurant_handler()
 restaurant_name = st.text_input("Restaurant Name")
 coordinates = get_current_location()
 location = st.text_input("Location")
-restaurant_type = st.selectbox("Restaurant Type", restaurant_types = [
+restaurant_type = st.selectbox("Restaurant Type", options = [
     "Mexican",
     "Thai",
     "Italian",

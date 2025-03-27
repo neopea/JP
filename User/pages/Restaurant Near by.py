@@ -29,6 +29,8 @@ locations = {
     ]
 }
 
+locations = handler.db.all()
+
 # Add restaurant markers to the map
 for restaurant in locations["Restaurants"]:
     folium.Marker(

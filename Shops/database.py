@@ -92,8 +92,31 @@ class restaurant_handler():
         else:
             return None  # Return None if no records found
 
-# Example usage:
 
+class con_handler:
+    def __init__(self):
+        self.db = TinyDB('convenient.json')
+        self.Product = Query()
+
+    def add_record(self, restaurant_name,coordinates, location):
+        # Create a new restaurant record
+        new_record = {
+            'con_name': restaurant_name,
+            'coordinates': coordinates ,
+            'location' : location , 
+        }
+        
+        # Insert the new record into the TinyDB
+        self.db.insert(new_record)
+        print(f"Record added: {new_record}")
+
+    def get_record(self, restaurant_name):
+        # Query the TinyDB for a restaurant by name
+        result = self.db.search(self.Product.con_name == restaurant_name)
+        if result:
+            return result  # Return the found records
+        else:
+            return None  # Return None if no records found
 
     
 # Example usage
@@ -102,5 +125,6 @@ if __name__ == '__main__':
     my_db_handler = product_handler()
     #my_db_handler.db.truncate()
 
-    handler = restaurant_handler()
+    handler = con_handler()
+    handler.add_record("711" , [123,123] , "happy streeyt")
 
