@@ -24,7 +24,7 @@ selected_types = st.multiselect("Select Food Categories", options=categories)
 from tinydb import TinyDB, Query
 
 # Sample database setup (You should replace this with your actual database file)
-db = TinyDB('restaurants.json')  
+db = TinyDB('restaurant.json')  
 
 def find_restaurant(distance_limit, restaurant_type, user_location):
     Restaurant = Query()
@@ -58,7 +58,7 @@ suitable_restaurants = find_restaurant(distance_limit, restaurant_type,  user_lo
 
 confirm = st.button("search")
 if confirm :
-
+    print('hi')
 # Display suitable restaurants
 for restaurant in suitable_restaurants:
     print(f"Restaurant Name: {restaurant['restaurant_name']}, Location: {restaurant['location']}, Distance: {great_circle(user_location, restaurant['coordinates']).kilometers:.2f} km")
