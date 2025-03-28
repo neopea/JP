@@ -13,7 +13,7 @@ st.title("Restaurant Preference Selector")
 price = st.select_slider("Select the price of the food ($)", options=range(1, 50), value=(20))
 
 # Maximum distance slider for selecting the distance in kilometers
-max_distance = st.select_slider("Select maximum distance (km)", options=range(1, 11), value=5)
+max_distance = st.select_slider("Select maximum distance (km)", options=range(1, 101), value=5)
 
 # Options for filtering
 categories = [

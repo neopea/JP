@@ -7,7 +7,7 @@ def get_current_location():
         latitude = g.latlng[0]
         longitude = g.latlng[1]
         print(f"Current location - Latitude: {latitude}, Longitude: {longitude}")
-        return latitude , longitude 
+        return 22.2783, 114.1747
     else:
         print("Could not obtain location")
 

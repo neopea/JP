@@ -24,18 +24,20 @@ if uploaded_file is not None:
 st.title("Webcam Image Capture with Streamlit")
 
     # Use the camera input widget
-camera_input = st.camera_input("Take a picture")
 
-if camera_input:
-    # Read the image as a PIL image
-    image = Image.open(camera_input)
+if st.checkbox("Enable camera"):
+    camera_input = st.camera_input("Take a picture")
 
-    # Save the image
-    image.save("photo.jpg")
-    
-    # Display the captured image
-    st.image(image, caption="Captured Image", use_column_width=True)
-    st.success("Image saved as photo.jpg")
+    if camera_input:
+        # Read the image as a PIL image
+        image = Image.open(camera_input)
+
+        # Save the image
+        image.save("photo.jpg")
+        
+        # Display the captured image
+        st.image(image, caption="Captured Image", use_column_width=True)
+        st.success("Image saved as photo.jpg")
 
 name = st.text_input("Supplier name and Food name")
 description=st.text_area("Description")

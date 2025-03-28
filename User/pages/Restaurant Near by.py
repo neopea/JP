@@ -35,11 +35,16 @@ for convenience_store in loc:
     folium.Marker(
         location=convenience_store["coordinates"],
         popup=f"{convenience_store['con_name']} -  {convenience_store['location']}",
-        icon=folium.Icon(color='orange', icon='store')  # Change icon color to orange for convenience stores
+        icon=folium.Icon( icon='store')  # Change icon color to orange for convenience stores
     ).add_to(m)
 
-# Render the map in Streamlit
+folium.Marker(
+        location=get_current_location(),
+        popup="current location",
+        icon=folium.Icon(color='black', icon='store')  # Change icon color to orange for convenience stores
+    ).add_to(m)# Render the map in Streamlit
 st_data = st_folium(m, width=725, zoom=125)
+
 
 # Optionally add further functionality, like user interaction or data filtering
 st.write("Click on the markers to see more details.")

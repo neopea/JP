@@ -13,7 +13,6 @@ class product_handler:
         self.db.insert({
             'name': name,
             'description': description,
-            'image': encoded_string,
             'expiration_date': expiration_date,
             'price': price,
             'quantity_available': quantity_available,
@@ -45,35 +44,6 @@ class product_handler:
     def get_all_products(self):
         """Retrieve all products from the database."""
         return self.db.all()
-    
-    def search_products(self, min_price=None, max_price=None, category=None):
-        """Search for products by price range and category."""
-        query = self.Product  # Start with the base query
-        
-        # Create a list of conditions
-        conditions = []
-        
-        if min_price is not None:
-            conditions.append(self.Product.price >= min_price)
-        
-        if max_price is not None:
-            conditions.append(self.Product.price <= max_price)
-        
-        if category is not None and category != "":  # Ensure category is not empty
-            conditions.append(self.Product.category == category)
-
-        # If there are no conditions, return all products
-        if not conditions:
-            return self.get_all_products()
-
-        # Combine all conditions using AND logic
-        final_query = conditions[0]
-        for condition in conditions[1:]:
-            final_query &= condition
-
-        return self.db.search(final_query)
-        
-        
 
 
 class order_handler():
@@ -121,6 +91,7 @@ class restaurant_handler():
         else:
             return None  # Return None if no records found
 
+
 class con_handler:
     def __init__(self):
         self.db = TinyDB('convenient.json')
@@ -149,6 +120,115 @@ class con_handler:
     
 # Example usage
 if __name__ == '__main__':
+    #testing case 
+    my_db_handler = product_handler()
+    from tinydb import TinyDB
+
+    db = TinyDB('product.json')
+
+    db.insert_multiple([
+        {
+            "name": "Pasta",
+            "description": "Pasta with tomato sauce, meatballs",
+            "expiration_date": "2025-03-29",
+            "price": 40.0,
+            "quantity_available": 12,
+            "category": ["Noodles"]
+        },
+        {
+            "name": "Apple",
+            "description": "Fresh red apple",
+            "expiration_date": "2025-04-15",
+            "price": 5.0,
+            "quantity_available": 50,
+            "category": ["Fruits"]
+        },
+        {
+            "name": "Lettuce",
+            "description": "Fresh romaine lettuce",
+            "expiration_date": "2025-03-28",
+            "price": 3.0,
+            "quantity_available": 30,
+            "category": ["Vegetables"]
+        },
+        {
+            "name": "Bread",
+            "description": "Whole grain bread",
+            "expiration_date": "2025-04-01",
+            "price": 6.0,
+            "quantity_available": 25,
+            "category": ["Bread"]
+        },
+        {
+            "name": "Milk",
+            "description": "1 liter of fresh milk",
+            "expiration_date": "2025-03-31",
+            "price": 2.5,
+            "quantity_available": 40,
+            "category": ["Dairy"]
+        },
+        {
+            "name": "Rice",
+            "description": "Basmati rice, 1 kg",
+            "expiration_date": "2025-12-31",
+            "price": 8.0,
+            "quantity_available": 20,
+            "category": ["Rice"]
+        },
+        {
+            "name": "Orange Juice",
+            "description": "Freshly squeezed orange juice",
+            "expiration_date": "2025-04-05",
+            "price": 4.5,
+            "quantity_available": 15,
+            "category": ["Drinks"]
+        },
+        {
+            "name": "Cereal",
+            "description": "Breakfast cereal, 500g",
+            "expiration_date": "2025-05-30",
+            "price": 7.0,
+            "quantity_available": 18,
+            "category": ["Packaged food"]
+        },
+        {
+            "name": "Free Sample Snack",
+            "description": "A free sample snack bar",
+            "expiration_date": "2025-07-01",
+            "price": 0.0,
+            "quantity_available": 100,
+            "category": ["Others"]
+        },
+        {
+            "name": "Free Water Bottle",
+            "description": "A free reusable water bottle",
+            "expiration_date": "2025-12-31",
+            "price": 0.0,
+            "quantity_available": 50,
+            "category": ["Others"]
+        },
+        {
+            "name": "Frozen Vegetables",
+            "description": "Mixed frozen vegetables, 1 kg",
+            "expiration_date": "2025-06-15",
+            "price": 5.5,
+            "quantity_available": 10,
+            "category": ["Packaged food"]
+        },
+        {
+            "name": "Snack Bars",
+            "description": "Nut and fruit snack bars, pack of 6",
+            "expiration_date": "2025-07-01",
+            "price": 6.0,
+            "quantity_available": 22,
+            "category": ["Others"]
+        }
+    ])
+
+
+
+
+# Example usage
     #testing case
     '''
     my_db_handler = product_handler()

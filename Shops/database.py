@@ -13,7 +13,6 @@ class product_handler:
         self.db.insert({
             'name': name,
             'description': description,
-            'image': encoded_string,
             'expiration_date': expiration_date,
             'price': price,
             'quantity_available': quantity_available,
@@ -123,8 +122,6 @@ class con_handler:
 if __name__ == '__main__':
     #testing case 
     my_db_handler = product_handler()
-    #my_db_handler.db.truncate()
 
-    handler = con_handler()
-    handler.add_record("711" , [123,123] , "happy streeyt")
+
 

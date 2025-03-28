@@ -1,1 +1,54 @@
-{"_default": {"1": {"con_name": "7-Eleven", "coordinates": [22.501, 114.14], "location": "101 Greenfield Road, Fanling, Hong Kong"}, "2": {"con_name": "Wellcome", "coordinates": [22.503, 114.1425], "location": "202 Willow Lane, Fanling, Hong Kong"}, "3": {"con_name": "ParknShop", "coordinates": [22.505, 114.145], "location": "303 Blossom Street, Fanling, Hong Kong"}, "4": {"con_name": "Circle K", "coordinates": [22.507, 114.1475], "location": "404 Maple Avenue, Fanling, Hong Kong"}, "5": {"con_name": "Great Food Hall", "coordinates": [22.509, 114.149], "location": "505 Oak Drive, Fanling, Hong Kong"}, "6": {"con_name": "Taste", "coordinates": [22.511, 114.1405], "location": "606 Cherry Boulevard, Fanling, Hong Kong"}, "7": {"con_name": "Citysuper", "coordinates": [22.513, 114.142], "location": "707 Pine Crescent, Fanling, Hong Kong"}, "8": {"con_name": "Yata Supermarket", "coordinates": [22.515, 114.144], "location": "808 Cedar Way, Fanling, Hong Kong"}, "9": {"con_name": "Spar", "coordinates": [22.517, 114.146], "location": "909 Birch Path, Fanling, Hong Kong"}, "10": {"con_name": "The Dairy Farm", "coordinates": [22.519, 114.148], "location": "1001 Spruce Terrace, Fanling, Hong Kong"}}}
+{
+    "_default": {
+      "1": {
+        "con_name": "7-Eleven",
+        "coordinates": [22.2790, 114.1750],
+        "location": "101 Greenfield Road, Fanling, Hong Kong"
+      },
+      "2": {
+        "con_name": "Wellcome",
+        "coordinates": [22.2785, 114.1745],
+        "location": "202 Willow Lane, Fanling, Hong Kong"
+      },
+      "3": {
+        "con_name": "ParknShop",
+        "coordinates": [22.2800, 114.1760],
+        "location": "303 Blossom Street, Fanling, Hong Kong"
+      },
+      "4": {
+        "con_name": "Circle K",
+        "coordinates": [22.2778, 114.1735],
+        "location": "404 Maple Avenue, Fanling, Hong Kong"
+      },
+      "5": {
+        "con_name": "Great Food Hall",
+        "coordinates": [22.2795, 114.1770],
+        "location": "505 Oak Drive, Fanling, Hong Kong"
+      },
+      "6": {
+        "con_name": "Taste",
+        "coordinates": [22.2782, 114.1758],
+        "location": "606 Cherry Boulevard, Fanling, Hong Kong"
+      },
+      "7": {
+        "con_name": "Citysuper",
+        "coordinates": [22.2804, 114.1765],
+        "location": "707 Pine Crescent, Fanling, Hong Kong"
+      },
+      "8": {
+        "con_name": "Yata Supermarket",
+        "coordinates": [22.2769, 114.1742],
+        "location": "808 Cedar Way, Fanling, Hong Kong"
+      },
+      "9": {
+        "con_name": "Spar",
+        "coordinates": [22.2810, 114.1775],
+        "location": "909 Birch Path, Fanling, Hong Kong"
+      },
+      "10": {
+        "con_name": "The Dairy Farm",
+        "coordinates": [22.2789, 114.1780],
+        "location": "1001 Spruce Terrace, Fanling, Hong Kong"
+      }
+    }
+  }
