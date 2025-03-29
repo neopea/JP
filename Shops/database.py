@@ -121,7 +121,6 @@ class con_handler:
 # Example usage
 if __name__ == '__main__':
     #testing case 
-    my_db_handler = product_handler()
-
+    print('hi')
 
 

@@ -12,7 +12,7 @@ conhandler = con_handler()
 # Set page title
 st.title("GPS Function with Restaurant and Convenience Store Icons")
 
-user_location = get_current_location()  # Ensure this returns a tuple like (latitude, longitude)
+user_location = 22.2783, 114.1747  # Ensure this returns a tuple like (latitude, longitude)
 # Create a folium map centered around the user's location
 m = folium.Map(location=user_location, zoom_start=12)
 
